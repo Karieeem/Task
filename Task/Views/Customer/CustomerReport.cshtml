@@ -1,0 +1,15 @@
+﻿@model DevExpress.XtraReports.UI.XtraReport
+
+@{
+    ViewBag.Title = "CustomerReport";
+    Layout = "~/Views/Shared/_LayoutDevExpress.cshtml";
+}
+
+<h1>HHH</h1>
+
+
+@Html.DevExpress().WebDocumentViewer(settings =>
+{
+    settings.Name = "WebDocumentViewer";
+}).Bind((DevExpress.XtraReports.UI.XtraReport)Model).GetHtml()
+
