@@ -1,0 +1,18 @@
+create proc SP_CustomerProducts_Report  1
+ @customerId    int
+as
+begin
+
+select   cus.Id  as CustomerId,
+		 cus.Name  as CustomerName,
+		 pro.Id  as ProductId,
+		 pro.Name  as ProductName
+from CustomerProducts  cusPro
+	join Customers  cus
+		on cus.Id=cusPro.CustomerId
+	join Products pro
+		on cusPro.ProductId=pro.Id
+	where cus.Id=@customerId
+
+
+end
